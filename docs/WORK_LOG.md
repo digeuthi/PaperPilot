@@ -44,6 +44,8 @@
 - 프로젝트 초기 문서 및 파일 구조 생성
 - `data/` 하위 폴더 및 `.gitkeep` 추가
 - `README.md`, `requirements.txt`, `.env.example`, `.gitignore` 생성
+- Phase 1 PDF 업로드 및 파일 저장 기능 구현
+- Phase 2 PDF 텍스트 추출 기능 구현
 
 ### 완료된 항목
 - [x] 프로젝트명 PaperPilot 확정
@@ -57,43 +59,19 @@
 - [x] `app.py`, `README.md`, `requirements.txt`, `.env.example`, `.gitignore` 생성
 - [x] `data/` 하위 폴더와 `.gitkeep` 생성
 - [x] `src/`, `tests/` 빈 폴더 추적용 `.gitkeep` 추가
-
-### 미완료 항목
-- [ ] Python 가상환경 생성
-- [ ] Phase 1 PDF 업로드 기능 구현
-
-### 이슈
-- 아직 실제 코드 구현 전 단계이다.
-- GitHub Repository 생성 후 프로젝트 폴더 구조를 먼저 정리해야 한다.
-- 빈 폴더는 Git에서 추적되지 않으므로 `.gitkeep`로 보완함.
-
-### 다음 작업
-- Phase 1 PDF 업로드 및 파일 저장 기능 구현
-- `src/storage/file_storage.py` 구조 설계
-- Python 가상환경 생성 및 의존성 설치
-
-## 2026-05-06
-
-### 작업 내용
-- Phase 1 PDF 업로드 및 파일 저장 기능 구현
-- `src/storage/file_storage.py` 추가
-- Streamlit에서 PDF 업로드 UI 추가 및 업로드 파일 저장 기능 구현
-
-### 완료된 항목
 - [x] Phase 1 PDF 업로드 및 파일 저장 기능 구현
-- [x] Streamlit PDF 업로드 UI 추가
-- [x] PDF 파일을 `data/uploads/`에 저장
-- [x] 파일 저장 로직을 `src/storage/file_storage.py`로 분리
+- [x] Phase 2 PDF 텍스트 추출 기능 구현
+- [x] Python 가상환경 생성 및 의존성 설치
 
 ### 미완료 항목
-- [ ] PDF 텍스트 추출 기능 구현
 - [ ] AI 요약 기능 구현
 - [ ] PPT 생성 기능 구현
 
 ### 이슈
-- 현재 Phase 1에서는 업로드된 PDF 저장까지만 진행하며, 이후 Phase에서 텍스트 추출과 분석을 구현함.
+- 아직 실제 AI 요약과 PPT 생성을 구현하지 않았다.
+- PDF 텍스트 추출 후 추가 분석 단계는 Phase 3 이후에 진행할 예정.
 
 ### 다음 작업
-- Phase 2 PDF 텍스트 추출 기능 구현
-- `src/document/text_extractor.py` 설계
-- 업로드 파일 저장 구조 검증
+- Phase 3 논문 구조 분석 기능 구현
+- `src/analysis/paper_parser.py` 설계
+- 추출된 텍스트 기반 섹션 분리 검증
