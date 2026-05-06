@@ -47,6 +47,8 @@ docs/CODING_GUIDELINES.md, docs/DEVELOPMENT_ROADMAP.md, docs/WORK_LOG.md를 먼�
 
 한 번에 모든 기능을 만들지 말고,
 현재 요청한 Phase 또는 기능만 구현해주세요.
+
+- 작업 후 `docs/WORK_LOG.md`와 `README.md`를 현재 구현 상태에 맞게 함께 업데이트해주세요.
 ```
 
 ---
@@ -242,6 +244,7 @@ docs/CODING_GUIDELINES.md를 기준으로,
 - .env가 Git에 포함되지 않는가
 - 불필요한 코드가 없는가
 - WORK_LOG.md가 업데이트되었는가
+- README.md가 현재 구현 상태를 반영하고 있는가
 - 다음 작업이 명확히 기록되었는가
 ```
 
