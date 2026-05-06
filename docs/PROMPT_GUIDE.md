@@ -252,14 +252,38 @@ docs/CODING_GUIDELINES.md를 기준으로,
 ```text
 현재 변경사항에 적절한 Git 커밋 메시지를 추천해주세요.
 
-커밋 메시지는 아래 형식을 따릅니다.
+커밋 메시지는 아래 형식을 따르며, 본문은 한국어로 작성합니다.
 
-- init:
-- docs:
-- feat:
-- fix:
-- refactor:
-- test:
+- init: 초기 세팅 및 구조 생성
+- docs: 문서 추가/수정
+- feat: 기능 추가
+- fix: 버그 수정
+- refactor: 리팩터링
+- test: 테스트 추가/수정
+
+예시:
+- feat: PDF 업로드 및 파일 저장 기능 구현
+- docs: WORK_LOG에 Phase 1 작업 기록
+- refactor: 파일 저장 로직을 src/storage/file_storage.py로 분리
+- fix: PDF 업로드 파일 형식 검증 오류 수정
+```
+
+---
+
+## 14. 커밋 작성 가이드
+
+- 각 Phase별 변경 사항은 작은 단위로 커밋합니다.
+- 커밋 메시지는 `prefix: 설명` 형태로 한글로 작성합니다.
+- `docs/WORK_LOG.md` 업데이트도 커밋에 포함합니다.
+- 변경 사항이 많지 않다면 한 Phase를 하나의 커밋으로 유지합니다.
+- 예시 커밋 명령:
+
+```bash
+git add .
+git commit -m "feat: Phase 1 PDF 업로드 및 저장 기능 구현"
+```
+
+- 커밋 후에는 `git log --oneline --decorate`로 커밋 기록을 확인합니다.
 
 이번 변경사항을 기준으로 가장 적절한 커밋 메시지를 3개 정도 추천해주세요.
 ```

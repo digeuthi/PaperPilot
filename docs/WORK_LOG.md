@@ -71,3 +71,29 @@
 - Phase 1 PDF 업로드 및 파일 저장 기능 구현
 - `src/storage/file_storage.py` 구조 설계
 - Python 가상환경 생성 및 의존성 설치
+
+## 2026-05-06
+
+### 작업 내용
+- Phase 1 PDF 업로드 및 파일 저장 기능 구현
+- `src/storage/file_storage.py` 추가
+- Streamlit에서 PDF 업로드 UI 추가 및 업로드 파일 저장 기능 구현
+
+### 완료된 항목
+- [x] Phase 1 PDF 업로드 및 파일 저장 기능 구현
+- [x] Streamlit PDF 업로드 UI 추가
+- [x] PDF 파일을 `data/uploads/`에 저장
+- [x] 파일 저장 로직을 `src/storage/file_storage.py`로 분리
+
+### 미완료 항목
+- [ ] PDF 텍스트 추출 기능 구현
+- [ ] AI 요약 기능 구현
+- [ ] PPT 생성 기능 구현
+
+### 이슈
+- 현재 Phase 1에서는 업로드된 PDF 저장까지만 진행하며, 이후 Phase에서 텍스트 추출과 분석을 구현함.
+
+### 다음 작업
+- Phase 2 PDF 텍스트 추출 기능 구현
+- `src/document/text_extractor.py` 설계
+- 업로드 파일 저장 구조 검증
