@@ -47,6 +47,8 @@
 - Phase 1 PDF 업로드 및 파일 저장 기능 구현
 - Phase 2 PDF 텍스트 추출 기능 구현
 - Phase 3 논문 섹션 분석 기능 구현 및 추출된 텍스트 기반 JSON 저장 기능 추가
+- Phase 3 섹션 파서 보정: References 분리 및 섹션 제목 패턴 강화
+- Phase 4 섹션별 요약 기능 구조 구현 및 mock 요약 JSON 저장 기능 추가
 
 ### 완료된 항목
 - [x] 프로젝트명 PaperPilot 확정
@@ -63,6 +65,8 @@
 - [x] Phase 1 PDF 업로드 및 파일 저장 기능 구현
 - [x] Phase 2 PDF 텍스트 추출 기능 구현
 - [x] Phase 3 논문 섹션 분석 기능 구현 및 JSON 저장 기능 추가
+- [x] Phase 3 섹션 파서 보정: References 분리 및 탐지 패턴 강화
+- [x] Phase 4 섹션별 요약 기능 구조 구현 및 mock 요약 JSON 저장 기능 추가
 - [x] Python 가상환경 생성 및 의존성 설치
 
 ### 미완료 항목

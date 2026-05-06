@@ -1,4 +1,5 @@
 import streamlit as st
+from src.ai.section_summarizer import build_section_summaries, save_section_summaries
 from src.document.section_parser import extract_paper_sections, save_sections_json
 from src.document.text_extractor import extract_text_from_pdf_file
 from src.storage.file_storage import save_uploaded_file
@@ -10,13 +11,13 @@ st.markdown(
     """
     PaperPilot은 논문 분석 및 발표자료 구성 보조를 목표로 하는 MVP입니다.
 
-    이 Phase 3 버전에서는 PDF 업로드, 파일 저장, PDF 텍스트 추출, 논문 섹션 분석 기능을 준비합니다.
+    이 Phase 4 버전에서는 PDF 업로드, 파일 저장, PDF 텍스트 추출, 논문 섹션 분석, AI 기반 섹션 요약 기능을 준비합니다.
     """
 )
 
-st.info("현재 구현된 기능: PDF 업로드, 파일 저장, PDF 텍스트 추출, 논문 섹션 분리. AI 요약과 PPT 생성은 아직 구현되지 않았습니다.")
+st.info("현재 구현된 기능: PDF 업로드, 파일 저장, PDF 텍스트 추출, 논문 섹션 분리, 섹션 요약. PPT 생성은 아직 구현되지 않았습니다.")
 
-st.header("Phase 0~3: 현재 상태")
+st.header("Phase 0~4: 현재 상태")
 st.write(
     """
     - Phase 0: 프로젝트 기본 구조 및 Streamlit 화면 구성
@@ -71,6 +72,32 @@ if uploaded_file is not None:
                 missing_sections = parsed_sections.get("missing_sections", [])
                 if missing_sections:
                     st.warning(f"탐지되지 않은 섹션: {', '.join(missing_sections)}")
+
+                summary_data = build_section_summaries(parsed_sections)
+                summary_json_path = save_section_summaries(summary_data, extracted_path)
+                st.success(f"섹션 요약 결과가 저장되었습니다: `{summary_json_path.name}`")
+
+                if summary_data.get("is_mock"):
+                    st.info("현재 요약은 Mock Summary 형태로 생성되었습니다. 추후 OpenAI API 연결 시 실제 요약으로 교체됩니다.")
+
+                st.subheader("섹션 요약 결과")
+                for section_key in [
+                    "abstract",
+                    "introduction",
+                    "methods",
+                    "results",
+                    "discussion",
+                    "conclusion",
+                ]:
+                    summary_text = summary_data.get("summaries", {}).get(section_key, "").strip()
+                    if summary_text:
+                        with st.expander(f"{section_key.title()} 요약"):
+                            st.write(summary_text)
+                    else:
+                        st.warning(f"{section_key.title()} 섹션 요약을 생성할 수 없습니다.")
+
+                if summary_data.get("missing_sections"):
+                    st.warning(f"요약할 수 없는 섹션: {', '.join(summary_data['missing_sections'])}")
 
                 st.subheader("탐지된 섹션 목록 및 미리보기")
                 for section_key in [
