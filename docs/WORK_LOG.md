@@ -46,6 +46,7 @@
 - `README.md`, `requirements.txt`, `.env.example`, `.gitignore` 생성
 - Phase 1 PDF 업로드 및 파일 저장 기능 구현
 - Phase 2 PDF 텍스트 추출 기능 구현
+- Phase 3 논문 섹션 분석 기능 구현 및 추출된 텍스트 기반 JSON 저장 기능 추가
 
 ### 완료된 항목
 - [x] 프로젝트명 PaperPilot 확정
@@ -61,6 +62,7 @@
 - [x] `src/`, `tests/` 빈 폴더 추적용 `.gitkeep` 추가
 - [x] Phase 1 PDF 업로드 및 파일 저장 기능 구현
 - [x] Phase 2 PDF 텍스트 추출 기능 구현
+- [x] Phase 3 논문 섹션 분석 기능 구현 및 JSON 저장 기능 추가
 - [x] Python 가상환경 생성 및 의존성 설치
 
 ### 미완료 항목
@@ -72,6 +74,6 @@
 - PDF 텍스트 추출 후 추가 분석 단계는 Phase 3 이후에 진행할 예정.
 
 ### 다음 작업
-- Phase 3 논문 구조 분석 기능 구현
-- `src/analysis/paper_parser.py` 설계
-- 추출된 텍스트 기반 섹션 분리 검증
+- Phase 4 AI 요약 기능 구현
+- PPT 슬라이드 구성안 생성 기능 설계
+- 추후 OCR 및 Figure/Table 분석 단계 준비
