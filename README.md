@@ -9,6 +9,7 @@ PaperPilot은 논문 PDF 분석 및 발표 자료 구성 보조를 목표로 하
 - Phase 2: PDF 텍스트 추출 및 `data/extracted/` 저장 기능 구현
 - Phase 3: 추출된 텍스트 기반 논문 섹션 분리 및 JSON 저장 기능 구현
 - Phase 4: 섹션별 AI 요약 기능 구조 및 mock 요약 저장 기능 구현, `data/summaries/`에 JSON 저장
+- Phase 5: 섹션 요약 기반 Mock 1장 공부 요약 Markdown 생성 및 다운로드 기능 구현
 
 ## 포함된 항목
 
@@ -55,8 +56,8 @@ streamlit run app.py
 
 ## 현재 개발 단계
 
-- Phase 4: PDF 텍스트 추출, 논문 섹션 분리, 섹션 요약 기능 구현 완료
-- 다음 단계: Phase 5 1장 공부 요약 및 PPT 슬라이드 구성안 생성 기능 구현
+- Phase 5: PDF 텍스트 추출, 논문 섹션 분리, 섹션 요약, 1장 공부 요약 생성 기능 구현 완료
+- 다음 단계: Phase 6 PPT 슬라이드 구성안 생성 기능 구현
 
 ## 향후 구현 예정 기능
 

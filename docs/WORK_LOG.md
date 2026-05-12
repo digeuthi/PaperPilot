@@ -36,6 +36,35 @@
 
 ---
 
+## 2026-05-12
+
+### 작업 내용
+- Phase 5 1장 공부 요약 생성 기능 구현
+- mock 기반으로 1장 요약 Markdown 생성 및 `data/summaries/` 저장
+- Streamlit 화면에 1장 공부 요약 표시 및 Markdown 다운로드 버튼 추가
+- `src/output/one_page_summary_generator.py`로 1장 요약 로직 분리
+- `README.md`, `docs/DEVELOPMENT_ROADMAP.md`, `docs/PROMPT_GUIDE.md` 업데이트
+
+### 완료된 항목
+- [x] Phase 5 1장 공부 요약 생성 기능 구현
+- [x] Markdown 파일 저장 및 JSON 메타데이터 파일 저장 구조 준비
+- [x] Streamlit에 1장 요약 표시 및 다운로드 버튼 추가
+- [x] Phase 5 관련 문서 업데이트
+
+### 미완료 항목
+- [ ] 실제 OpenAI API 연결 및 실시간 AI 요약 기능 구현
+- [ ] PPT 슬라이드 구성안 생성 기능 구현
+
+### 이슈
+- 현재는 모든 요약이 Mock Summary 기반으로 생성됩니다.
+- 실제 API 연결 시 요약 결과가 정확하게 반영되는지 검증해야 합니다.
+
+### 다음 작업
+- Phase 6 PPT 슬라이드 구성안 생성 기능 설계 및 구현
+- OpenAI API 연결을 위한 안전한 키 관리 및 호출 구조 추가
+
+---
+
 ## 2026-05-06
 
 ### 작업 내용

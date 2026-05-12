@@ -2,6 +2,7 @@ import streamlit as st
 from src.ai.section_summarizer import build_section_summaries, save_section_summaries
 from src.document.section_parser import extract_paper_sections, save_sections_json
 from src.document.text_extractor import extract_text_from_pdf_file
+from src.output.one_page_summary_generator import build_one_page_summary, save_one_page_summary
 from src.storage.file_storage import save_uploaded_file
 
 st.set_page_config(page_title="PaperPilot", page_icon="📄", layout="centered")
@@ -77,8 +78,25 @@ if uploaded_file is not None:
                 summary_json_path = save_section_summaries(summary_data, extracted_path)
                 st.success(f"섹션 요약 결과가 저장되었습니다: `{summary_json_path.name}`")
 
+                one_page_markdown = build_one_page_summary(summary_data, parsed_sections)
+                one_page_md_path, one_page_json_path = save_one_page_summary(
+                    one_page_markdown,
+                    extracted_path,
+                    summary_data=summary_data,
+                )
+                st.success(f"1장 공부 요약이 저장되었습니다: `{one_page_md_path.name}`")
+
                 if summary_data.get("is_mock"):
                     st.info("현재 요약은 Mock Summary 형태로 생성되었습니다. 추후 OpenAI API 연결 시 실제 요약으로 교체됩니다.")
+
+                st.subheader("1장 공부 요약 (Markdown)")
+                st.markdown(one_page_markdown)
+                st.download_button(
+                    label="Markdown 파일 다운로드",
+                    data=one_page_markdown,
+                    file_name=one_page_md_path.name,
+                    mime="text/markdown",
+                )
 
                 st.subheader("섹션 요약 결과")
                 for section_key in [

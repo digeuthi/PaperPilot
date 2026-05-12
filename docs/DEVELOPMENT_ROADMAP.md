@@ -256,8 +256,18 @@ Conclusions
 
 ### 작업 항목
 
-- [ ] 섹션 요약 결과를 기반으로 통합 요약 생성
-- [ ] Markdown 형식으로 출력
+- [x] 섹션 요약 결과를 기반으로 통합 요약 생성
+- [x] Markdown 형식으로 출력
+- [x] `data/summaries/`에 Markdown 저장
+- [x] Streamlit UI에 1장 요약 표시 및 다운로드 기능 추가
+- [x] 1장 요약 저장 로직을 `src/output/one_page_summary_generator.py`로 분리
+
+### 완료 기준
+
+- [x] 1장 공부 요약 Markdown 생성
+- [x] 1장 공부 요약이 `data/summaries/`에 저장됨
+- [x] Streamlit에서 Markdown 출력 및 다운로드 버튼 표시됨
+- [ ] 실제 OpenAI API 연결 없이 Mock 기반 동작
 - [ ] 화면에 요약 표시
 - [ ] `data/summaries/`에 `.md` 파일 저장
 - [ ] 요약 생성 로직을 `src/output/study_summary_generator.py`로 분리
